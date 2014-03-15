@@ -19,7 +19,7 @@ public class LevelGen : MonoBehaviour {
 
 	void GenerateMap(){
 		// Starting position
-		Vector3 lastPosition = new Vector3(8.5f, 0);
+		Vector3 lastPosition = new Vector3(1.2f, 0);
 		Level.Side nextEntranceSide = Level.Side.Left;
 
 		// Generate 10 levels from left to right
