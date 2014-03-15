@@ -120,8 +120,8 @@ MonoBehaviour:
   - {fileID: 1594684362}
   - {fileID: 1279032814}
   - {fileID: 1546390482}
-  parallaxScale: .5
-  parallaxReductionFactor: 1
+  parallaxScale: 8
+  parallaxReductionFactor: .400000006
   smoothing: 8
 --- !u!1001 &930793422
 Prefab:
@@ -157,6 +157,18 @@ Prefab:
     - target: {fileID: 400004, guid: c0e1d9b7421384945ac20d132ee77a8d, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c0e1d9b7421384945ac20d132ee77a8d, type: 2}
+      propertyPath: scenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: 26ed7edd67fea0c4b9b01033bf941b9e, type: 2}
+    - target: {fileID: 11400004, guid: c0e1d9b7421384945ac20d132ee77a8d, type: 2}
+      propertyPath: parallaxReductionFactor
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: c0e1d9b7421384945ac20d132ee77a8d, type: 2}
+      propertyPath: parallaxScale
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0e1d9b7421384945ac20d132ee77a8d, type: 2}

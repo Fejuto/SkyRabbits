@@ -152,8 +152,8 @@ MonoBehaviour:
   - {fileID: 400006}
   - {fileID: 400002}
   - {fileID: 400000}
-  parallaxScale: .5
-  parallaxReductionFactor: 1
+  parallaxScale: 8
+  parallaxReductionFactor: .400000006
   smoothing: 8
 --- !u!114 &11400006
 MonoBehaviour:
