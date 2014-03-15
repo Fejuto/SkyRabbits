@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852990661d7eb4534bc9d49c59647b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
-  walkSpeed: 2
+  jumpForce: 6
+  walkSpeed: 3
   groundedPoint: {fileID: 400000}
 --- !u!114 &11400002
 MonoBehaviour:

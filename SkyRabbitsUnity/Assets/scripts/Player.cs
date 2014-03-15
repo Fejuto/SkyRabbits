@@ -45,8 +45,6 @@ public class Player : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
 		}
 
-		Debug.Log (GetComponent<Rigidbody2D> ().velocity);
-
 	}
 
 	bool IsGrounded(){
