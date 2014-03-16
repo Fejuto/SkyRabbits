@@ -29,9 +29,13 @@ public class PlayerDeath : MonoBehaviour {
 		Vector3 playerPosition = transform.position;
 		
 		Vector3 delta = playerPosition - cameraPosition;
-		
-		if ((Mathf.Abs(delta.x) > (screenWidth * 0.5 + margin)  / pixelsPerUnit ) ||
-		    (Mathf.Abs (delta.y) > (screenHeight * 0.5 + margin ) / pixelsPerUnit)) {
+
+		float horizontalLimit = (screenHeight * 0.5f + margin ) / pixelsPerUnit;
+		float verticalLimit = (screenWidth * 0.5f + margin)  / pixelsPerUnit;
+
+
+		if (Mathf.Abs(delta.x) >  verticalLimit  ||
+		    Mathf.Abs(delta.y) > horizontalLimit) {
 			spawnBoneFountain();
 			respawn();
 		} 
@@ -52,6 +56,12 @@ public class PlayerDeath : MonoBehaviour {
 	private void spawnBoneFountain(){
 		GameObject effect = (GameObject) Instantiate (deadEffect, transform.position,deadEffect.transform.rotation);
 		effect.transform.parent = Camera.main.transform;
+
+		Vector3 cameraPosition = Camera.main.transform.position;
+		Vector3 target = new Vector3 (cameraPosition.x, cameraPosition.y, transform.position.z);
+
+		effect.transform.LookAt(target);
+
 
 	}
 }
