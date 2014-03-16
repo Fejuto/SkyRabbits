@@ -46,7 +46,7 @@ public class RepeatingBackground : MonoBehaviour {
 		if (testVisible (stage.Count -1)) {
 			// Last element is visible.
 			// Insert scene to  the right.
-			Debug.Log("insertAfter");
+			//Debug.Log("insertAfter");
 
 			insertRandomSceneAfter();
 		} else if (!testVisible (stage.Count -2)) {
