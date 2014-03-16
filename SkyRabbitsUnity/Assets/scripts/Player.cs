@@ -51,7 +51,7 @@ public class Player : MonoBehaviour {
 		
 		if (Time.time - pushTime < 0.3f) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
-		} else {
+		}
 
 		checkAlive();
 
@@ -109,17 +109,17 @@ public class Player : MonoBehaviour {
 			}
 
 		if (Input.GetKey (playerControls.buttonLeft) && Input.GetKey (playerControls.buttonRight) && IsGrounded ()) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpForce);
-			}
-
-			if (movingLeft) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-walkSpeed, GetComponent<Rigidbody2D> ().velocity.y);
-			} else if (movingRight) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (walkSpeed, GetComponent<Rigidbody2D> ().velocity.y);
-			} else {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
-			}
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpForce);
 		}
+
+		if (movingLeft) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-walkSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+		} else if (movingRight) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (walkSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+		} else {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, GetComponent<Rigidbody2D> ().velocity.y);
+		}
+
 	}
 
 	void FixedUpdate(){
