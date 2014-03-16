@@ -600,6 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - {fileID: 100000, guid: 26ed7edd67fea0c4b9b01033bf941b9e, type: 2}
+  width: 4.80000019
 --- !u!4 &1031859618
 Transform:
   m_ObjectHideFlags: 0
@@ -652,6 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - {fileID: 100000, guid: 8d22106f0f10da84baaa32a4c3405157, type: 2}
+  width: 4.80000019
 --- !u!1 &1261613123
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - {fileID: 100000, guid: 5c8af23365a838b4fbf629b39eb05025, type: 2}
+  width: 4.80000019
 --- !u!1 &1984320838
 GameObject:
   m_ObjectHideFlags: 0
