@@ -58,7 +58,7 @@ Transition:
   - m_ConditionMode: 5
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
-    m_ExitTime: 1
+    m_ExitTime: 6
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -77,24 +77,6 @@ Transition:
     m_ConditionEvent: isStunned
     m_EventTreshold: 0
     m_ExitTime: .75
-  m_Atomic: 1
-  m_Solo: 0
-  m_Mute: 0
---- !u!1101 &110111994
-Transition:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_SrcState: {fileID: 110272786}
-  m_DstState: {fileID: 110241988}
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: horizontalSpeed
-    m_EventTreshold: -3
-    m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -120,21 +102,29 @@ Transition:
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
---- !u!1101 &110134685
+--- !u!1101 &110135320
 Transition:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110276690}
-  m_DstState: {fileID: 110272786}
-  m_TransitionDuration: 0
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110241988}
+  m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isGrounded
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 2
+    m_ConditionEvent: isStunned
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
   - m_ConditionMode: 4
     m_ConditionEvent: horizontalSpeed
-    m_EventTreshold: 3
-    m_ExitTime: 1
+    m_EventTreshold: -3
+    m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -174,6 +164,40 @@ Transition:
   - m_ConditionMode: 2
     m_ConditionEvent: isStunned
     m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 3
+    m_ConditionEvent: horizontalSpeed
+    m_EventTreshold: .300000012
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110149359
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110272786}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isStunned
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 2
+    m_ConditionEvent: isGrounded
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 4
+    m_ConditionEvent: horizontalSpeed
+    m_EventTreshold: 3
+    m_ExitTime: .899999976
+  - m_ConditionMode: 3
+    m_ConditionEvent: horizontalSpeed
+    m_EventTreshold: -3
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
@@ -450,6 +474,8 @@ StateMachine:
       second:
       - {fileID: 110144281}
       - {fileID: 110183870}
+      - {fileID: 110149359}
+      - {fileID: 110135320}
     data:
       first: {fileID: 110218987}
       second:
@@ -465,12 +491,10 @@ StateMachine:
     data:
       first: {fileID: 110276690}
       second:
-      - {fileID: 110134685}
       - {fileID: 110159913}
     data:
       first: {fileID: 110272786}
       second:
-      - {fileID: 110111994}
       - {fileID: 110182481}
     data:
       first: {fileID: 110241988}
