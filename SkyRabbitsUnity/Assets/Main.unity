@@ -378,6 +378,7 @@ GameObject:
   - 61: {fileID: 265324594}
   - 114: {fileID: 265324593}
   - 114: {fileID: 265324592}
+  - 114: {fileID: 265324598}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -414,11 +415,6 @@ MonoBehaviour:
   jumpForce: 6
   walkSpeed: 3
   groundedPoint: {fileID: 2038317150}
-  screenWidth: 480
-  screenHeight: 270
-  margin: 50
-  pixelsPerUnit: 100
-  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!61 &265324594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -483,6 +479,23 @@ Transform:
   m_Children:
   - {fileID: 2038317150}
   m_Father: {fileID: 0}
+--- !u!114 &265324598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b44427c728b9845ba82ec4e5628f0d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 123596490}
+  m_GameObject: {fileID: 265324591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!1001 &633380998
 Prefab:
   m_ObjectHideFlags: 0
@@ -672,6 +685,7 @@ GameObject:
   - 61: {fileID: 1261613127}
   - 114: {fileID: 1261613128}
   - 114: {fileID: 1261613129}
+  - 114: {fileID: 1261613130}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -758,11 +772,6 @@ MonoBehaviour:
   jumpForce: 7
   walkSpeed: 2
   groundedPoint: {fileID: 1625318874}
-  screenWidth: 480
-  screenHeight: 270
-  margin: 50
-  pixelsPerUnit: 100
-  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!114 &1261613129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,8 +784,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726e8aee5404341b9aab7476c771eb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLeft: 97
-  buttonRight: 115
+  buttonLeft: 276
+  buttonRight: 275
+--- !u!114 &1261613130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b44427c728b9845ba82ec4e5628f0d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 642661652}
+  m_GameObject: {fileID: 1261613123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!1 &1388410756
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +849,7 @@ MonoBehaviour:
   - {fileID: 1235251899}
   - {fileID: 1031859618}
   - {fileID: 1933612097}
-  parallaxScale: .899999976
+  parallaxScale: 1.20000005
   parallaxReductionFactor: .400000006
   smoothing: 8
 --- !u!1 &1518647726
@@ -1008,6 +1034,7 @@ GameObject:
   - 61: {fileID: 1984320841}
   - 114: {fileID: 1984320840}
   - 114: {fileID: 1984320839}
+  - 114: {fileID: 1984320845}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1044,11 +1071,6 @@ MonoBehaviour:
   jumpForce: 6
   walkSpeed: 3
   groundedPoint: {fileID: 37830088}
-  screenWidth: 480
-  screenHeight: 270
-  margin: 50
-  pixelsPerUnit: 100
-  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!61 &1984320841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1113,6 +1135,23 @@ Transform:
   m_Children:
   - {fileID: 37830088}
   m_Father: {fileID: 0}
+--- !u!114 &1984320845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b44427c728b9845ba82ec4e5628f0d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 1576508623}
+  m_GameObject: {fileID: 1984320838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!1 &2038317149
 GameObject:
   m_ObjectHideFlags: 0
