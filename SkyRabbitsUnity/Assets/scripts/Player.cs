@@ -50,6 +50,7 @@ public class Player : MonoBehaviour {
 		GetComponent<Animator> ().SetBool ("isGrounded", IsGrounded ());
 		GetComponent<Animator> ().SetBool ("isStunned", isStunned());
 		GetComponent<Animator> ().SetBool ("isWalking", Mathf.Abs(GetComponent<Rigidbody2D> ().velocity.x) > 0.01f);
+		GetComponent<Animator> ().SetFloat ("horizontalSpeed", GetComponent<Rigidbody2D> ().velocity.y);
 	}
 	
 

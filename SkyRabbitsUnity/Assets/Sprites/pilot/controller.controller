@@ -26,6 +26,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: horizontalSpeed
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -85,9 +91,9 @@ Transition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: isStunned
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: horizontalSpeed
+    m_EventTreshold: -3
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -125,9 +131,9 @@ Transition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: isStunned
-    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: horizontalSpeed
+    m_EventTreshold: 3
     m_ExitTime: 1
   m_Atomic: 1
   m_Solo: 0
@@ -147,6 +153,28 @@ Transition:
     m_ConditionEvent: isWalking
     m_EventTreshold: 0
     m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110144281
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110276690}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: isGrounded
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  - m_ConditionMode: 2
+    m_ConditionEvent: isStunned
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -219,6 +247,24 @@ Transition:
     m_ConditionEvent: isGrounded
     m_EventTreshold: 0
     m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110183870
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110210173}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: isStunned
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -330,7 +376,7 @@ State:
   - {fileID: 7400000, guid: 834cfef7d103f42f2af44918852e5c84, type: 2}
   - {fileID: 0}
   m_ParentStateMachine: {fileID: 110749169}
-  m_Position: {x: 876, y: -84, z: 0}
+  m_Position: {x: 768, y: -60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -362,7 +408,7 @@ State:
   - {fileID: 7400000, guid: 7d87839a4eb0a4587ac514b475720540, type: 2}
   - {fileID: 0}
   m_ParentStateMachine: {fileID: 110749169}
-  m_Position: {x: 540, y: -84, z: 0}
+  m_Position: {x: 492, y: -60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -378,7 +424,7 @@ State:
   - {fileID: 7400000, guid: 4cfa89a4ab71542478bdf9cca9df72f5, type: 2}
   - {fileID: 0}
   m_ParentStateMachine: {fileID: 110749169}
-  m_Position: {x: 168, y: -84, z: 0}
+  m_Position: {x: 216, y: -60, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -400,28 +446,22 @@ StateMachine:
   - {x: 72, y: 24, z: 0}
   m_OrderedTransitions:
     data:
+      first: {fileID: 0}
+      second:
+      - {fileID: 110144281}
+      - {fileID: 110183870}
+    data:
       first: {fileID: 110218987}
       second:
       - {fileID: 110193759}
     data:
-      first: {fileID: 0}
-      second: []
+      first: {fileID: 110200000}
+      second:
+      - {fileID: 110140318}
     data:
       first: {fileID: 110210173}
       second:
       - {fileID: 110108569}
-    data:
-      first: {fileID: 0}
-      second:
-      - {fileID: 110187581}
-      - {fileID: 110134269}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110140318}
     data:
       first: {fileID: 110276690}
       second:
@@ -460,5 +500,5 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}
   m_MotionSetCount: 2
-  m_AnyStatePosition: {x: 396, y: -180, z: 0}
-  m_ParentStateMachinePosition: {x: 492, y: 180, z: 0}
+  m_AnyStatePosition: {x: 552, y: -204, z: 0}
+  m_ParentStateMachinePosition: {x: 768, y: 180, z: 0}

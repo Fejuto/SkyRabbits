@@ -308,6 +308,14 @@ Prefab:
       propertyPath: actionButton
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b44427c728b9845ba82ec4e5628f0d32, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b44427c728b9845ba82ec4e5628f0d32, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b44427c728b9845ba82ec4e5628f0d32, type: 2}
   m_RootGameObject: {fileID: 425891289}
@@ -374,7 +382,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 386723177}
   m_GameObject: {fileID: 425891289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 852990661d7eb4534bc9d49c59647b53, type: 3}
   m_Name: 
