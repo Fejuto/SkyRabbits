@@ -35,7 +35,7 @@ public class RepeatingBackground : MonoBehaviour {
 		if (testVisible (0)) {
 			// First element is visible.
 			// Insert scene to  the left.
-			Debug.Log("insertBefore");
+			//Debug.Log("insertBefore");
 			insertRandomSceneBefore();
 		} else if (!testVisible (1)) {
 			// First and second element are not visible
@@ -62,7 +62,6 @@ public class RepeatingBackground : MonoBehaviour {
 		if (i < 0 || i >= stage.Count) {
 			return;
 		}
-
 
 		GameObject scene = (GameObject)stage [i];
 		stage.RemoveAt (i);

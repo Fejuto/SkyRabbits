@@ -30,12 +30,14 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerControls = GetComponent<PlayerControls> ();
+		print ("!!");
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-
+		print (Input.GetKey (playerControls.buttonLeft));
+		print ("!!");
 		attack();
 		
 		if (Time.time - pushTime < 0.3f) {
