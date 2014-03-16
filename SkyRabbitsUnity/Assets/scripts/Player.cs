@@ -42,13 +42,10 @@ public class Player : MonoBehaviour {
 		}
 		
 		if (Time.time - pushTime < 0.3f) {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
+						GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
 		} else {
-			move();
+				move ();
 		}
-
-		checkAlive();
-
 
 		
 	}
