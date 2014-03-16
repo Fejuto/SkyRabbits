@@ -15,6 +15,7 @@ public class MovingCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		return;
 		// First time (might move to Start() )
 		if(targetPoint == null)
 		{

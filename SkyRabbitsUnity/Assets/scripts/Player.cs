@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 	public float walkSpeed;
 
 	public Transform groundedPoint;
+	public Transform groundedPoint2;
+	public Transform groundedPoint3;
 	public Transform frontPoint;
 
 	PlayerControls playerControls;
@@ -33,10 +35,8 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Collider2D playerFront = GetPlayerFront ();
-		print (playerFront);
 		if (!threeButton () || (Time.time - attackTime > 0.4f && IsAttack ())) {
 			attackTime = Time.time;
-			//print (attackTime);
 			if (playerFront != null && playerFront.GetComponent<Player> () != null && Time.time - pushTime > 0.3f) {
 				attackTime = Time.time;
 				playerFront.GetComponent<Player> ().pushForce.x = 3 * transform.localScale.x;
@@ -129,7 +129,9 @@ public class Player : MonoBehaviour {
 
 
 	bool IsGrounded(){
-		return Physics2D.OverlapPoint (new Vector2 (groundedPoint.position.x, groundedPoint.position.y)) != null && GetComponent<Rigidbody2D>().velocity.y <= 0.01;
+		return Physics2D.OverlapPoint (new Vector2 (groundedPoint.position.x, groundedPoint.position.y)) != null ||
+						Physics2D.OverlapPoint (new Vector2 (groundedPoint2.position.x, groundedPoint2.position.y)) != null ||
+						Physics2D.OverlapPoint (new Vector2 (groundedPoint3.position.x, groundedPoint3.position.y)) != null;
 	}
 	//Time.time
 	Collider2D GetPlayerFront(){
