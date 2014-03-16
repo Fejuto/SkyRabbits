@@ -33,10 +33,10 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Collider2D playerFront = GetPlayerFront ();
-
+		print (playerFront);
 		if (!threeButton () || (Time.time - attackTime > 0.4f && IsAttack ())) {
 			attackTime = Time.time;
-			print (attackTime);
+			//print (attackTime);
 			if (playerFront != null && playerFront.GetComponent<Player> () != null && Time.time - pushTime > 0.3f) {
 				attackTime = Time.time;
 				playerFront.GetComponent<Player> ().pushForce.x = 3 * transform.localScale.x;
@@ -51,11 +51,13 @@ public class Player : MonoBehaviour {
 		
 		if (Time.time - pushTime < 0.3f) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
+		} else {
+			move();
 		}
 
 		checkAlive();
 
-		move();
+
 		
 	}
 
