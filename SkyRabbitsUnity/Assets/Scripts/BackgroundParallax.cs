@@ -29,6 +29,11 @@ public class BackgroundParallax : MonoBehaviour
 
 	void Update ()
 	{
+
+		// Update height to match camera
+		transform.position = new Vector3 (transform.position.x, cam.position.y, transform.position.z);
+
+
 		// The parallax is the opposite of the camera movement since the previous frame multiplied by the scale.
 		float parallax = (previousCamPos.x - cam.position.x) * parallaxScale;
 

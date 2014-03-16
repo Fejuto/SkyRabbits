@@ -823,7 +823,7 @@ MonoBehaviour:
   - {fileID: 1235251899}
   - {fileID: 1031859618}
   - {fileID: 1933612097}
-  parallaxScale: 8
+  parallaxScale: .899999976
   parallaxReductionFactor: .400000006
   smoothing: 8
 --- !u!1 &1518647726
