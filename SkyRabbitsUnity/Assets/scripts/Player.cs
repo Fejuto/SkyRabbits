@@ -18,6 +18,11 @@ public class Player : MonoBehaviour {
 
 	Vector2 pushForce = new Vector2();
 	float pushTime;
+
+	public AudioClip jumpSound;
+	public AudioClip bumpSound;
+
+	private bool jumped = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -38,11 +43,13 @@ public class Player : MonoBehaviour {
 					pushForce.x = -3 * transform.localScale.x;
 					pushTime = Time.time;
 				}
+
+				audio.PlayOneShot(bumpSound);
 			}
 		}
 		
 		if (Time.time - pushTime < 0.3f) {
-						GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
 		} else {
 				move ();
 		}
@@ -70,7 +77,13 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKey (playerControls.buttonLeft) && Input.GetKey (playerControls.buttonRight) && IsGrounded ()) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpForce);
+			jumped = true;
+		} else {
+			if(jumped) audio.PlayOneShot(jumpSound);
+			jumped = false;
 		}
+
+
 
 		if (movingLeft) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (-walkSpeed, GetComponent<Rigidbody2D> ().velocity.y);
