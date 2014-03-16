@@ -25,16 +25,19 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Collider2D playerFront = GetPlayerFront ();
-		print (playerFront);
-		if (playerFront != null && playerFront.GetComponent<Player>() != null && Time.time - pushTime > 0.1f && (!threeButton() || Time.time - playerFront.GetComponent<Player>().pushTime > 0.1f && IsAttack())) {
+
+		if (!threeButton () || (Time.time - attackTime > 0.4f && IsAttack ())) {
 			attackTime = Time.time;
-			playerFront.GetComponent<Player>().pushForce.x = 3 * transform.localScale.x;
-			playerFront.GetComponent<Player>().pushTime = Time.time;
-		
-			if(!threeButton())
-			{
-				pushForce.x = -3 * transform.localScale.x;
-				pushTime = Time.time;
+			print (attackTime);
+			if (playerFront != null && playerFront.GetComponent<Player> () != null && Time.time - pushTime > 0.3f) {
+				attackTime = Time.time;
+				playerFront.GetComponent<Player> ().pushForce.x = 3 * transform.localScale.x;
+				playerFront.GetComponent<Player> ().pushTime = Time.time;
+
+				if (!threeButton ()) {
+					pushForce.x = -3 * transform.localScale.x;
+					pushTime = Time.time;
+				}
 			}
 		}
 		
@@ -82,9 +85,9 @@ public class Player : MonoBehaviour {
 		return Physics2D.OverlapPoint (new Vector2 (frontPoint.position.x, frontPoint.position.y), LayerMask.NameToLayer("players"));
 	}
 
-	float attackTime;
+	float attackTime = -999f;
 	bool IsAttack(){
-		return Time.time - attackTime > 0.2 && Input.GetKey(playerControls.actionButton);
+		return Input.GetKey(playerControls.actionButton);
 	}
 
 	bool threeButton(){
