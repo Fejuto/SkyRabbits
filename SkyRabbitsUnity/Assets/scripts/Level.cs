@@ -1,16 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Level : MonoBehaviour {
 	
-	public enum Side{
+	public enum Side
+	{
 		Left, Right, Top, Bottom
 	};
+	
+	public Side entranceSide;
+	public Side exitSide;
+	
+	public Component entrancePoint;
+	public Component exitPoint;
 
-	public enum Turn{
+	private int currentCamera = -1;
+	public Component[] cameraPoints;
+
+	public enum Turn
+	{
 		Straight,
 		Left,
 		Right
+	}
+
+	public Component GetNextCameraPoint()
+	{
+
+
+		if(++currentCamera == cameraPoints.Length)
+		{
+			// First time return the exitPoint as last camera point
+			return exitPoint;
+		}else if(currentCamera > cameraPoints.Length){
+			// Next time return null so next level can be inited
+			return null;
+		}
+
+		return cameraPoints[currentCamera];
 	}
 
 	//Inverses the input (for mapping exit to next entrance side)
@@ -30,12 +58,6 @@ public class Level : MonoBehaviour {
 
 		throw new UnityException("Cannot find inverse side! :D");
 	}
-
-	public Side entranceSide;
-	public Side exitSide;
-
-	public Component entrancePoint;
-	public Component exitPoint;
 
 	public Turn GetTurn()
 	{
@@ -85,7 +107,7 @@ public class Level : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
