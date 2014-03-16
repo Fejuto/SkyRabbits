@@ -9,6 +9,9 @@ public class Player : MonoBehaviour {
 	public Transform groundedPoint;
 	public Transform groundedPoint2;
 	public Transform groundedPoint3;
+	public Transform topPoint;
+	public Transform topPoint2;
+	public Transform topPoint3;
 	public Transform frontPoint;
 
 	PlayerControls playerControls;
@@ -51,6 +54,7 @@ public class Player : MonoBehaviour {
 		GetComponent<Animator> ().SetBool ("isStunned", isStunned());
 		GetComponent<Animator> ().SetBool ("isWalking", Mathf.Abs(GetComponent<Rigidbody2D> ().velocity.x) > 0.01f);
 		GetComponent<Animator> ().SetFloat ("horizontalSpeed", GetComponent<Rigidbody2D> ().velocity.y);
+		GetComponent<Animator> ().SetBool ("isPressed", IsPressed());
 	}
 	
 
@@ -95,6 +99,12 @@ public class Player : MonoBehaviour {
 						Physics2D.OverlapPoint (new Vector2 (groundedPoint3.position.x, groundedPoint3.position.y)) != null;
 	}
 
+	bool IsPressed(){
+		return Physics2D.OverlapPoint (new Vector2 (topPoint.position.x, topPoint.position.y)) != null ||
+			Physics2D.OverlapPoint (new Vector2 (topPoint2.position.x, topPoint2.position.y)) != null ||
+				Physics2D.OverlapPoint (new Vector2 (topPoint3.position.x, topPoint3.position.y)) != null;
+	}
+	
 	bool isStunned(){
 		return Time.time - pushTime < 0.3f;
 	}
