@@ -106,6 +106,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d0405d6048b0d4923b5b066a3e9f5feb, type: 2}
   - {fileID: 11400000, guid: 92cbb99fbed2449228814f60f7251f75, type: 2}
   - {fileID: 11400000, guid: 1ddac850422324eddb8f4122a732a972, type: 2}
+  - {fileID: 11400000, guid: 8b6738e850feb4c4fb91b17b5895abeb, type: 2}
+  instantiatedLevels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!4 &72407314
 Transform:

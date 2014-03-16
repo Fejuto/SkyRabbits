@@ -5,6 +5,7 @@ public class RepeatingBackground : MonoBehaviour {
 
 	// Provide sprites of 480x270. These will be used to fill in the background. 
 	public GameObject[] scenes;
+	public float width = 4.8f;
 
 	private ArrayList stage = new ArrayList();
 
@@ -84,7 +85,7 @@ public class RepeatingBackground : MonoBehaviour {
 		//Put it on the stage
 		r = (GameObject)Instantiate(scene);
 		r.transform.parent = this.gameObject.transform;
-		r.transform.position = scene.transform.position + Vector3.right * 480;
+		r.transform.position = scene.transform.position + Vector3.right * width;
 		stage.Add (r);
 		return r;
 	}
@@ -99,7 +100,7 @@ public class RepeatingBackground : MonoBehaviour {
 		//Put it on the stage
 		r = (GameObject)Instantiate(scene);
 		r.transform.parent = this.gameObject.transform;
-		r.transform.position = scene.transform.position + Vector3.left * 480;
+		r.transform.position = scene.transform.position + Vector3.left * width;
 		stage.Insert (0,r);
 
 		return r;

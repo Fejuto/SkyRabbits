@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControls : MonoBehaviour {
+public class FadeOut : MonoBehaviour {
 
-	public KeyCode buttonLeft;
-	public KeyCode buttonRight;
-	public KeyCode actionButton;
+	public float lifeTime;
+	public float fadeTime;
+	private float time;
 
 	// Use this for initialization
 	void Start () {
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+
+
 	}
 }
