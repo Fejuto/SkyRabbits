@@ -11,6 +11,8 @@ public class PlayerDeath : MonoBehaviour {
 	
 	public GameObject deadEffect = null;
 
+	public AudioClip deathSound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -37,6 +39,7 @@ public class PlayerDeath : MonoBehaviour {
 		if (Mathf.Abs(delta.x) >  verticalLimit  ||
 		    Mathf.Abs(delta.y) > horizontalLimit) {
 			spawnBoneFountain();
+			audio.PlayOneShot(deathSound);
 			respawn();
 		} 
 
