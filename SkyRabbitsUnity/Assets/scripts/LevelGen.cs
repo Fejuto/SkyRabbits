@@ -29,6 +29,11 @@ public class LevelGen : MonoBehaviour {
 		
 	}
 
+	public Level GetCurrentLevel()
+	{
+		return instantiatedLevels[2];
+	}
+
 	void GenerateFirstLevelBlocks()
 	{
 		// Create level 4
@@ -64,7 +69,7 @@ public class LevelGen : MonoBehaviour {
 //		}
 //	}
 
-	void NextLevel()
+	public void NextLevel()
 	{
 		// Destroy last level
 		if(instantiatedLevels[0] != null){
