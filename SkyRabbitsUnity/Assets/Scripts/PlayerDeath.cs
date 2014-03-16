@@ -26,6 +26,8 @@ public class PlayerDeath : MonoBehaviour {
 
 	private Rigidbody2D rigidBody;
 
+	public GameObject deathCount;
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -54,8 +56,8 @@ public class PlayerDeath : MonoBehaviour {
 				transform.position = new Vector3(cameraPosition.x, cameraPosition.y, playerPosition.z);
 				transform.localScale = Vector3.one * 5.0f;
 
-				((GameObject)GameObject.Find("DeadCount")).renderer.enabled = true;
-				((GameObject)GameObject.Find("DeadCount")).GetComponent<TextMesh>().text = "" + deadCount;
+				deathCount.renderer.enabled = true;
+				deathCount.GetComponent<TextMesh>().text = "" + deadCount;
 			}
 
 		}
@@ -75,9 +77,9 @@ public class PlayerDeath : MonoBehaviour {
 					transform.localScale = Vector3.one;
 
 					gameObject.renderer.material.color = new Color(1,1,1,1);
-					((GameObject)GameObject.Find("DeadCount")).renderer.material.color = new Color(1,1,1,1);
+					deathCount.renderer.material.color = new Color(1,1,1,1);
 
-					((GameObject)GameObject.Find("DeadCount")).renderer.enabled = false;
+					deathCount.renderer.enabled = false;
 
 
 
@@ -87,7 +89,7 @@ public class PlayerDeath : MonoBehaviour {
 				float alpha = Mathf.Lerp(1,0,timeDeath/deathTime);
 
 				gameObject.renderer.material.color = new Color(1,1,1,alpha);
-				((GameObject)GameObject.Find("DeadCount")).renderer.material.color = new Color(1,1,1,alpha);
+				deathCount.renderer.material.color = new Color(1,1,1,alpha);
 
 			}
 		}

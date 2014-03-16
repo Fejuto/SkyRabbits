@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   - 95: {fileID: 9500000}
+  - 82: {fileID: 8200000}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -137,7 +138,7 @@ GameObject:
   - 4: {fileID: 400016}
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeadCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.228826344, y: -.0149781331, z: 0}
+  m_LocalPosition: {x: .472854018, y: -.0245901421, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -247,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.198657274, y: .0367946029, z: -.2601524}
+  m_LocalPosition: {x: .246787578, y: .0367946029, z: .00999999978}
   m_LocalScale: {x: .0250000004, y: .0250000004, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -298,6 +299,64 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .219999999, y: .219999999}
   m_Center: {x: 0, y: -.100000001}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -366,8 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726e8aee5404341b9aab7476c771eb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLeft: 107
-  buttonRight: 108
+  buttonLeft: 97
+  buttonRight: 115
   actionButton: 0
 --- !u!114 &11400004
 MonoBehaviour:
@@ -387,6 +446,7 @@ MonoBehaviour:
   deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
   deathSound: {fileID: 8300000, guid: b8f848853f47ff04e8e2b1f0cc351032, type: 3}
   deathTime: 3
+  deathCount: {fileID: 100016}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
