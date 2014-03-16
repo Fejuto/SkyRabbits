@@ -313,6 +313,24 @@ Prefab:
   m_RootGameObject: {fileID: 1269030671}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+  - 114: {fileID: 265324598}
+--- !u!114 &265324598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b44427c728b9845ba82ec4e5628f0d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 123596490}
+  m_GameObject: {fileID: 265324591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!1001 &633380998
 Prefab:
   m_ObjectHideFlags: 0
@@ -636,6 +654,7 @@ GameObject:
   - 61: {fileID: 1269030675}
   - 114: {fileID: 1269030674}
   - 114: {fileID: 1269030673}
+  - 114: {fileID: 1261613130}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -748,6 +767,23 @@ SpriteRenderer:
   m_SortingLayerID: 1311111737
   m_Sprite: {fileID: 21300000, guid: b6ecb86e71f1d401ca7ae538b1b60a48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1261613130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b44427c728b9845ba82ec4e5628f0d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 642661652}
+  m_GameObject: {fileID: 1261613123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!1 &1388410756
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +830,7 @@ MonoBehaviour:
   - {fileID: 1235251899}
   - {fileID: 1031859618}
   - {fileID: 1933612097}
-  parallaxScale: .899999976
+  parallaxScale: 1.20000005
   parallaxReductionFactor: .400000006
   smoothing: 8
 --- !u!1 &1518647726
@@ -1035,6 +1071,7 @@ GameObject:
   - 61: {fileID: 1984320841}
   - 114: {fileID: 1984320840}
   - 114: {fileID: 1984320839}
+  - 114: {fileID: 1984320845}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -1075,11 +1112,6 @@ MonoBehaviour:
   groundedPoint2: {fileID: 1184571247}
   groundedPoint3: {fileID: 37830088}
   frontPoint: {fileID: 2087756443}
-  screenWidth: 480
-  screenHeight: 270
-  margin: 50
-  pixelsPerUnit: 100
-  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!61 &1984320841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1147,7 +1179,23 @@ Transform:
   - {fileID: 1184571247}
   - {fileID: 37830088}
   m_Father: {fileID: 0}
---- !u!1 &2087756442
+--- !u!114 &1984320845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: b44427c728b9845ba82ec4e5628f0d32,
+    type: 2}
+  m_PrefabInternal: {fileID: 1576508623}
+  m_GameObject: {fileID: 1984320838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100004, guid: b44427c728b9845ba82ec4e5628f0d32, type: 2}

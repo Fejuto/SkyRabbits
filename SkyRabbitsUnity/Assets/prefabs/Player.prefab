@@ -28,6 +28,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -98,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.724285722, y: .0930558592, z: 0}
+  m_LocalPosition: {x: -.722257972, y: .0900291204, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -182,11 +183,6 @@ MonoBehaviour:
   groundedPoint2: {fileID: 400006}
   groundedPoint3: {fileID: 400000}
   frontPoint: {fileID: 400004}
-  screenWidth: 480
-  screenHeight: 270
-  margin: 50
-  pixelsPerUnit: 100
-  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,9 +194,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726e8aee5404341b9aab7476c771eb2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLeft: 97
-  buttonRight: 115
+  buttonLeft: 276
+  buttonRight: 275
   actionButton: 100
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19c0d7105c72449cc61be51803365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

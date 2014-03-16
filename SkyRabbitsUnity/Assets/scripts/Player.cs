@@ -19,14 +19,6 @@ public class Player : MonoBehaviour {
 	Vector2 pushForce = new Vector2();
 	float pushTime;
 	
-	public int screenWidth = 480; //pixels
-	public int screenHeight = 270; //pixels
-
-	public int margin = 50; //pixels
-	public int pixelsPerUnit = 100; 
-
-	public GameObject deadEffect = null;
-
 	// Use this for initialization
 	void Start () {
 		playerControls = GetComponent<PlayerControls> ();
@@ -60,38 +52,7 @@ public class Player : MonoBehaviour {
 
 		
 	}
-
-	private void checkAlive(){
-
-		Vector3 cameraPosition = Camera.main.transform.position;
-		Vector3 playerPosition = transform.position;
-
-		Vector3 delta = playerPosition - cameraPosition;
-
-		if ((Mathf.Abs(delta.x) > (screenWidth * 0.5 + margin)  / pixelsPerUnit ) ||
-		    (Mathf.Abs (delta.y) > (screenHeight * 0.5 + margin ) / pixelsPerUnit)) {
-			spawnBoneFountain();
-			respawn();
-		} 
-
-
-
-	}
-
-	private void respawn(){
-		Vector3 cameraPosition = Camera.main.transform.position;
-		Vector3 playerPosition = transform.position;
-
-		transform.position = new Vector3 (cameraPosition.x,
-		                                 cameraPosition.y + (screenHeight * 0.25f + margin * 0.9f) / pixelsPerUnit, 
-		                                 playerPosition.z); 
-
-		GetComponent<Rigidbody2D> ().velocity = Vector2.zero;
-	}
-
-	private void spawnBoneFountain(){
-		Instantiate (deadEffect, transform.position,deadEffect.transform.rotation);
-	}
+	
 
 	private void move(){
 
