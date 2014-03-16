@@ -41,6 +41,18 @@ TagManager:
     userID: 1
     uniqueID: 2238585959
     locked: 0
+  - name: DeadPlayers
+    userID: 2
+    uniqueID: 3751065919
+    locked: 0
+  - name: Level
+    userID: 3
+    uniqueID: 3031785917
+    locked: 0
+  - name: Players
+    userID: 4
+    uniqueID: 1572914949
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0

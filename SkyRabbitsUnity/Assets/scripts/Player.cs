@@ -34,27 +34,14 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Collider2D playerFront = GetPlayerFront ();
-		if (!threeButton () || (Time.time - attackTime > 0.4f && IsAttack ())) {
-			attackTime = Time.time;
-			if (playerFront != null && playerFront.GetComponent<Player> () != null && Time.time - pushTime > 0.3f) {
-				attackTime = Time.time;
-				playerFront.GetComponent<Player> ().pushForce.x = 3 * transform.localScale.x;
-				playerFront.GetComponent<Player> ().pushTime = Time.time;
 
-				if (!threeButton ()) {
-					pushForce.x = -3 * transform.localScale.x;
-					pushTime = Time.time;
-				}
 
-				audio.PlayOneShot(bumpSound);
-			}
-		}
+		attack();
 		
 		if (Time.time - pushTime < 0.3f) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (pushForce.x, GetComponent<Rigidbody2D> ().velocity.y + pushForce.y);
 		} else {
-				move ();
+			move ();
 		}
 
 		GetComponent<Animator> ().SetBool ("isGrounded", IsGrounded ());
@@ -63,7 +50,25 @@ public class Player : MonoBehaviour {
 		GetComponent<Animator> ().SetFloat ("horizontalSpeed", GetComponent<Rigidbody2D> ().velocity.y);
 		GetComponent<Animator> ().SetBool ("isPressed", IsPressed());
 	}
+
+	public void attack(){
+		Collider2D playerFront = GetPlayerFront ();
+		if (!threeButton () || (Time.time - attackTime > 0.4f && IsAttack ())) {
+				attackTime = Time.time;
+				if (playerFront != null && playerFront.GetComponent<Player> () != null && Time.time - pushTime > 0.3f) {
+						attackTime = Time.time;
+						playerFront.GetComponent<Player> ().pushForce.x = 3 * transform.localScale.x;
+						playerFront.GetComponent<Player> ().pushTime = Time.time;
 	
+						if (!threeButton ()) {
+								pushForce.x = -3 * transform.localScale.x;
+								pushTime = Time.time;
+						}
+	
+						audio.PlayOneShot (bumpSound);
+				}
+		}
+	}
 
 	private void move(){
 

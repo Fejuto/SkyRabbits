@@ -136,7 +136,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_LocalRotation: {x: 0, y: 0, z: -.338233799, w: .941062093}
+  m_LocalRotation: {x: 0, y: 0, z: -.338233829, w: .941062152}
   m_LocalPosition: {x: -.686175823, y: 1.61197138, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -208,6 +208,7 @@ MonoBehaviour:
   exitSide: 1
   entrancePoint: {fileID: 400002}
   exitPoint: {fileID: 400006}
+  cameraPoints: []
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -226,9 +227,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
+  m_SortingLayer: -2
   m_SortingOrder: 0
-  m_SortingLayerID: 1989657885
+  m_SortingLayerID: 3031785917
   m_Sprite: {fileID: 21300000, guid: 74c0ae80bc3f0416dbae70c5debc677b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21200002
@@ -249,9 +250,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
+  m_SortingLayer: -2
   m_SortingOrder: 0
-  m_SortingLayerID: 1989657885
+  m_SortingLayerID: 3031785917
   m_Sprite: {fileID: 21300000, guid: 74c0ae80bc3f0416dbae70c5debc677b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
