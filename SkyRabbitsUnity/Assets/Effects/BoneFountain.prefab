@@ -326,13 +326,13 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     cnt0: 1
-    cnt1: 2
+    cnt1: 1
     cnt2: 1
-    cnt3: 2
-    time0: .200000003
-    time1: .400000006
-    time2: .600000024
-    time3: 0
+    cnt3: 1
+    time0: 0
+    time1: .200000003
+    time2: .300000012
+    time3: .5
     m_BurstCount: 4
   SizeModule:
     enabled: 0
@@ -501,7 +501,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 1
   UVModule:
-    enabled: 0
+    enabled: 1
     frameOverTime:
       scalar: 1
       maxCurve:
@@ -535,11 +535,11 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 1
-    tilesX: 26
-    tilesY: 30
+    tilesX: 4
+    tilesY: 1
     animationType: 0
     rowIndex: 0
-    cycles: 1
+    cycles: 10
     randomRow: 1
   VelocityModule:
     enabled: 0
