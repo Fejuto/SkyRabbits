@@ -98,6 +98,11 @@ MonoBehaviour:
   jumpForce: 6
   walkSpeed: 3
   groundedPoint: {fileID: 400000}
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +134,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 1311111737
   m_Sprite: {fileID: 21300000, guid: b6ecb86e71f1d401ca7ae538b1b60a48, type: 3}

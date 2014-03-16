@@ -414,6 +414,11 @@ MonoBehaviour:
   jumpForce: 6
   walkSpeed: 3
   groundedPoint: {fileID: 2038317150}
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!61 &265324594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -753,6 +758,11 @@ MonoBehaviour:
   jumpForce: 7
   walkSpeed: 2
   groundedPoint: {fileID: 1625318874}
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!114 &1261613129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,6 +1044,11 @@ MonoBehaviour:
   jumpForce: 6
   walkSpeed: 3
   groundedPoint: {fileID: 37830088}
+  screenWidth: 480
+  screenHeight: 270
+  margin: 50
+  pixelsPerUnit: 100
+  deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
 --- !u!61 &1984320841
 BoxCollider2D:
   m_ObjectHideFlags: 0
