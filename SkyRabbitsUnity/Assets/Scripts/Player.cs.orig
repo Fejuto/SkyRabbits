@@ -16,9 +16,20 @@ public class Player : MonoBehaviour {
 	private bool movingLeft;
 	private bool movingRight;
 
+<<<<<<< HEAD
 	Vector2 pushForce = new Vector2();
 	float pushTime;
 	
+	public int screenWidth = 480; //pixels
+	public int screenHeight = 270; //pixels
+
+	public int margin = 50; //pixels
+	public int pixelsPerUnit = 100; 
+
+	public GameObject deadEffect = null;
+
+=======
+>>>>>>> origin/master
 	// Use this for initialization
 	void Start () {
 		playerControls = GetComponent<PlayerControls> ();
@@ -47,9 +58,14 @@ public class Player : MonoBehaviour {
 			move();
 		}
 
-		GetComponent<Animator> ().SetBool ("isGrounded", IsGrounded ());
-		GetComponent<Animator> ().SetBool ("isStunned", isStunned());
-		GetComponent<Animator> ().SetBool ("isWalking", Mathf.Abs(GetComponent<Rigidbody2D> ().velocity.x) > 0.01f);
+<<<<<<< HEAD
+		checkAlive();
+
+
+=======
+		move();
+>>>>>>> origin/master
+		
 	}
 	
 
@@ -93,11 +109,6 @@ public class Player : MonoBehaviour {
 						Physics2D.OverlapPoint (new Vector2 (groundedPoint2.position.x, groundedPoint2.position.y)) != null ||
 						Physics2D.OverlapPoint (new Vector2 (groundedPoint3.position.x, groundedPoint3.position.y)) != null;
 	}
-
-	bool isStunned(){
-		return Time.time - pushTime < 0.3f;
-	}
-
 	//Time.time
 	Collider2D GetPlayerFront(){
 		return Physics2D.OverlapPoint (new Vector2 (frontPoint.position.x, frontPoint.position.y), LayerMask.NameToLayer("players"));
@@ -109,7 +120,7 @@ public class Player : MonoBehaviour {
 	}
 
 	bool threeButton(){
-		return false;
+		return true;
 	}
 
 
