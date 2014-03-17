@@ -1396,6 +1396,7 @@ MonoBehaviour:
   deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
   deathSound: {fileID: 8300000, guid: b8f848853f47ff04e8e2b1f0cc351032, type: 3}
   deathTime: 3
+  deadCount: 0
   deathCount: {fileID: 1211895864}
 --- !u!114 &1079177268
 MonoBehaviour:
@@ -2472,6 +2473,7 @@ MonoBehaviour:
   deadEffect: {fileID: 100000, guid: d0f5c618442c46e459eca01e67bb331e, type: 2}
   deathSound: {fileID: 8300000, guid: b8f848853f47ff04e8e2b1f0cc351032, type: 3}
   deathTime: 3
+  deadCount: 0
   deathCount: {fileID: 382400695}
 --- !u!114 &1823830889
 MonoBehaviour:
