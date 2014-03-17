@@ -19,11 +19,14 @@ public class MenuLine : MonoBehaviour {
 	public void setPlayer(Player player, int winner)
 	{
 		player.transform.position = playerPosition.transform.position;
+		player.transform.localScale = new Vector3 (1, 1, 1);
+		player.renderer.material.color = new Color(1,1,1,1);
 		menuText.GetComponent<TextMesh> ().text = player.GetComponent<PlayerDeath> ().deadCount + "";
 		if (player.GetComponent<PlayerDeath> ().deadCount == winner) {
 			menuText.GetComponent<TextMesh> ().text += " Winner!";
 		}
 		player.GetComponent<PlayerDeath> ().disablePlayer ();
 		player.GetComponent<PlayerDeath> ().enabled = false;
+		player.transform.Find ("DeadCount").gameObject.SetActive (false);
 	}
 }

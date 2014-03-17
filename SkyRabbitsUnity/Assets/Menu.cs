@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		scoreManager = GameObject.FindObjectOfType<ScoreManager>();
 	}
 	
 	// Update is called once per frame
@@ -52,6 +52,9 @@ public class Menu : MonoBehaviour {
 			Vector3 v = GameObject.Find ("Main Camera").transform.position;
 			v.y = 100;
 			GameObject.Find ("Main Camera").transform.position = v;
+
+			transform.position = new Vector3(GameObject.Find ("Main Camera").transform.position.x, GameObject.Find ("Main Camera").transform.position.y - 0.2f, 0);
 		}
+
 	}
 }
