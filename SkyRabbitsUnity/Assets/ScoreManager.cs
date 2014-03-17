@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		players = new List<Player>(GameObject.FindObjectsOfType<Player> ());
 	}
 
 	public List<Player> GetSortedPlayers(){
