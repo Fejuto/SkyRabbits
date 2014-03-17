@@ -16,7 +16,7 @@ public class PlayerDeath : MonoBehaviour {
 	private float timeOfDeath = 0.0f;
 	public float deathTime = 3.0f; // seconds.
 
-	private int deadCount = 0;
+	public int deadCount = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -41,14 +41,7 @@ public class PlayerDeath : MonoBehaviour {
 				spawnBoneFountain();
 				audio.PlayOneShot(deathSound);
 
-
-
-
-
-				gameObject.rigidbody2D.isKinematic = true;
-				gameObject.collider2D.enabled = false;
-				gameObject.renderer.sortingLayerID = 2;
-				GetComponent<Player>().enabled = false;
+				disablePlayer();
 
 				Vector3 cameraPosition = Camera.main.transform.position;
 				Vector3 playerPosition = transform.position;
@@ -93,6 +86,13 @@ public class PlayerDeath : MonoBehaviour {
 
 			}
 		}
+	}
+
+	public void disablePlayer(){
+		gameObject.rigidbody2D.isKinematic = true;
+		gameObject.collider2D.enabled = false;
+		gameObject.renderer.sortingLayerID = 2;
+		GetComponent<Player>().enabled = false;
 	}
 
 	private bool checkAlive(){
