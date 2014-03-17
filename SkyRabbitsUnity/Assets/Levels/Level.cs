@@ -9,14 +9,14 @@ public class Level : MonoBehaviour {
 		Left, Right, Top, Bottom
 	};
 	
-	public Side entranceSide;
-	public Side exitSide;
+	public Side entranceSide = Side.Left;
+	public Side exitSide = Side.Right;
 	
-	public Component entrancePoint;
-	public Component exitPoint;
+	public GameObject entrancePoint;
+	public GameObject exitPoint;
 
 	private int currentCamera = -1;
-	public Component[] cameraPoints;
+	public GameObject[] cameraPoints;
 
 	public enum Turn
 	{
@@ -25,7 +25,7 @@ public class Level : MonoBehaviour {
 		Right
 	}
 
-	public Component GetNextCameraPoint()
+	public GameObject GetNextCameraPoint()
 	{
 
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MovingCamera : MonoBehaviour {
 
-	public Component targetPoint;
+	public GameObject targetPoint;
 	public float moveSpeed;
 
 	public LevelGen levelGenerator;

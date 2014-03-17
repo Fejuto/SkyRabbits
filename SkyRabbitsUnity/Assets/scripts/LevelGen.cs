@@ -6,6 +6,7 @@ public class LevelGen : MonoBehaviour {
 	// The levels being added in Unity to the LevelGenerator
 	public List<Level> levels;
 
+	public Level tutorial;
 	// Hold all the levels that are currently active
 	// 0 = 2 previous (can be visible)
 	// 1 = previous levelblock (can be visible)
@@ -17,10 +18,11 @@ public class LevelGen : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		// Generate the level
-		//GenerateMap ();
-		GenerateFirstLevelBlocks();
-
+		// Setup the tutorial
+		instantiatedLevels [4] = tutorial; 
+		// Call next level twice ;-)
+		NextLevel ();
+		NextLevel ();
 	}
 	
 	// Update is called once per frame
@@ -34,20 +36,20 @@ public class LevelGen : MonoBehaviour {
 		return instantiatedLevels[2];
 	}
 
-	void GenerateFirstLevelBlocks()
-	{
-		// Create level 4
-		Level levelPrototype = FindLevelWithEntrance(Level.Side.Left, Level.Side.Left);
-		Level newLevel = (Level) Instantiate(levelPrototype,
-		                                     new Vector3(1.2f - levelPrototype.entrancePoint.transform.position.x,
-		            									 0f - levelPrototype.entrancePoint.transform.position.y),
-		                                     Quaternion.identity);
-		instantiatedLevels[4] = newLevel;
-
-		// Call next level twice ;-)
-		NextLevel ();
-		NextLevel ();
-	}
+//	void GenerateFirstLevelBlocks()
+//	{
+//		// Create level 4
+////		Level levelPrototype = FindLevelWithEntrance(Level.Side.Left, Level.Side.Left);
+////		Level newLevel = (Level) Instantiate(levelPrototype,
+////		                                     new Vector3(transform.position.x - levelPrototype.entrancePoint.transform.position.x,
+////		            									 transform.position.y - levelPrototype.entrancePoint.transform.position.y),
+////		                                     Quaternion.identity);
+//		instantiatedLevels[4] = newLevel;
+//
+//		// Call next level twice ;-)
+//		NextLevel ();
+//		NextLevel ();
+//	}
 
 //	void GenerateMap()
 //	{
@@ -90,10 +92,26 @@ public class LevelGen : MonoBehaviour {
 
 		// Generate a new level
 		Level levelPrototype = FindNextLevelBlock(instantiatedLevels[3]);
-		Level newLevel = (Level) Instantiate(levelPrototype,
-		                                     new Vector3(instantiatedLevels[3].exitPoint.transform.position.x - levelPrototype.entrancePoint.transform.position.x,
-		            instantiatedLevels[3].exitPoint.transform.position.y - levelPrototype.entrancePoint.transform.position.y),
-		                                     Quaternion.identity);
+
+		Vector3 offSetPrevious = instantiatedLevels[3].transform.position;
+		Vector3 exitPrevious = instantiatedLevels[3].exitPoint.transform.position;
+
+		Debug.Log ("offSetPrevious " + offSetPrevious);
+		Debug.Log ("exitPrevious " + exitPrevious);
+
+
+		Vector3 offSetCurrent = levelPrototype.transform.position;
+		Vector3 entranceCurrent = levelPrototype.entrancePoint.transform.position;
+
+		Debug.Log ("offSetCurrent " + offSetCurrent);
+		Debug.Log ("entranceCurrent " + entranceCurrent);
+
+		Vector3 placement = exitPrevious - (entranceCurrent - offSetCurrent) ;
+
+		Debug.Log ("placement " + placement);
+
+		Level newLevel = (Level) Instantiate(levelPrototype, placement, Quaternion.identity);
+
 		instantiatedLevels[4] = newLevel;
 	}
 
