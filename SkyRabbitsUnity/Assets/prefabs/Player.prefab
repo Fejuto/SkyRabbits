@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .472854018, y: -.0245901421, z: 0}
+  m_LocalPosition: {x: .476459175, y: -.0245901421, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -412,8 +412,8 @@ MonoBehaviour:
   topPoint2: {fileID: 400006}
   topPoint3: {fileID: 400000}
   frontPoint: {fileID: 400004}
-  jumpSound: {fileID: 0}
-  bumpSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: ba537826d1664eb428496624852a953d, type: 3}
+  bumpSound: {fileID: 8300000, guid: 6e9c89f6f0187d74e81c57b77e8e5903, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,9 +465,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_SortingLayerID: 1311111737
+  m_SortingLayerID: 1572914949
   m_Sprite: {fileID: 21300000, guid: b6ecb86e71f1d401ca7ae538b1b60a48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
